@@ -1,19 +1,19 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
 
-function HireForm(props) {
-  const { onHire } = props;
+function EditWageForm(props) {
+  const { onEdit } = props;
   const [wage, setWage] = useState(0)
  
 
   function handleSubmit(event) {
     event.preventDefault()
-    onHire(wage);
+    onEdit(wage);
   }
     
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="wage">Wage Offer</label>
+      <label htmlFor="wage">New Wage Offer</label>
       <input
         type="text"
         id="wage"
@@ -21,9 +21,9 @@ function HireForm(props) {
         onChange={e => setWage(e.target.value)}
         value={wage}
       />
-      <button type="submit">Hire</button>
+      <button type="submit">Save</button>
     </form>
   )
 }
 
-export default HireForm
+export default EditWageForm
